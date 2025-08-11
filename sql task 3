@@ -1,0 +1,44 @@
+-- 1. SELECT all columns
+SELECT * FROM Books;
+
+-- 2. SELECT specific columns
+SELECT Title, Author FROM Books;
+
+-- 3. WHERE filter
+SELECT * FROM Members
+WHERE JoinDate > '2023-01-01';
+
+-- 4. WHERE with AND / OR
+SELECT * FROM Books
+WHERE CategoryID = 1 AND PublishedYear >= 2022;
+
+-- 5. LIKE pattern search
+SELECT * FROM Members
+WHERE Name LIKE 'J%';
+
+-- 6. BETWEEN for range
+SELECT * FROM Books
+WHERE PublishedYear BETWEEN 2020 AND 2023;
+
+-- 7. IN 
+SELECT * FROM Books
+WHERE CategoryID IN (1, 3);
+
+-- 8. ORDER BY descending
+SELECT * FROM Books
+ORDER BY PublishedYear DESC;
+
+-- 9. LIMIT output
+SELECT * FROM Books
+ORDER BY PublishedYear DESC
+LIMIT 3;
+
+-- 10. Aliasing
+SELECT Title AS BookTitle, Author AS Writer FROM Books;
+
+-- 11. DISTINCT
+SELECT DISTINCT CategoryID FROM Books;
+
+-- 12. Default sort order (ASC)
+SELECT * FROM Members
+ORDER BY Name;  -- ASC is default
